@@ -1,2 +1,10 @@
 export { default as Button } from './Button';
 export { default as Magneto } from './components/Magneto/src/Magneto';
+export { default as HamMenu } from './components/ham-menu/src/hammenu';
+export { default as HamMenuBurger } from './components/ham-menu/src/hammenu-burger';
+export { default as HamMenuBar } from './components/ham-menu/src/hammenu-bar';
+export { default as HamMenuTitle } from './components/ham-menu/src/hammenu-title';
+export { default as HamMenuLink } from './components/ham-menu/src/hammenu-mainLink';
+export { default as HamMenuContent } from './components/ham-menu/src/hammenu-content';
+export { default as HamMenuSubLink } from './components/ham-menu/src/hammenu-sublink';
+export { default as HamMenuSubContent } from './components/ham-menu/src/hammenu-subcontent';
