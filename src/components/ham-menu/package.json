@@ -1,32 +1,29 @@
 {
-  "name": "@avent-ui/magneto",
-  "version": "1.0.1",
-  "description": "Container for Magnetic Effect",
-  "main": "dist/index.js",
+  "name": "@avent-ui/ham-menu",
+  "version": "1.0.0",
+  "description": "Ham Menu with Smooth Animation",
+  "main": "dist/index.ts",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
-"type": "module",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
     "prepare": "npm run build"
   },
   "keywords": [
-    "magnet",
-    "magnetic",
-    "effect",
-    "aventure"
+    "menu",
+    "nav",
+    "ham-menu",
+    "nav-bar",
+    "burger",
+    "ham-burger-menu"
   ],
   "author": "Aathi Eswar S",
   "license": "MIT",
-  "dependencies": {
-    "gsap": "^3.12.5",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.1",
@@ -34,9 +31,13 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "postcss-cli": "^11.0.0",
-    "rollup": "^4.25.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "rollup": "^4.27.2",
     "rollup-plugin-typescript2": "^0.36.0",
     "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "framer-motion": "^11.11.17"
   }
 }
