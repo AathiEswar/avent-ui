@@ -28,6 +28,10 @@
   ],
   "author": "Aathi Eswar S",
   "license": "MIT",
+    "bugs": {
+    "url": "https://github.com/AathiEswar/avent-ui/issues"
+  },
+  "homepage": "https://github.com/AathiEswar/avent-ui/blob/main/src/components/ham-menu/README.md",
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.1",

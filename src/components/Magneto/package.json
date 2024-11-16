@@ -26,6 +26,10 @@
   ],
   "author": "Aathi Eswar S",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AathiEswar/avent-ui/issues"
+  },
+  "homepage": "https://github.com/AathiEswar/avent-ui/blob/main/src/components/Magneto/README.md",
   "dependencies": {
     "gsap": "^3.12.5",
     "react": "^18.3.1",
