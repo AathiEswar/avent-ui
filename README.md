@@ -33,7 +33,7 @@ We gotchu! If you only need a particular component, you can install it individua
 
 ### 1. Install the Component with @avent-ui namespace :
 
-```bash
+```jsx
 npm install @avent-ui/component-name
 ```
 
@@ -51,4 +51,8 @@ import { Component } from '@avent-ui/component-name';
 </Component>
 ```
  **Note:** Each component comes with unique properties and usage patterns. For detailed information and examples, please refer to the documentation specific to each component.
+
+ ## List Of Components : 
+ [Magneto ](src\components\ham-menu\README.md) <br/>
+ [Ham Menu](src\components\Magneto\README.md)
 
