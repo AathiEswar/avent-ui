@@ -1,6 +1,6 @@
 {
   "name": "@avent-ui/ham-menu",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Ham Menu with Smooth Animation",
   "main": "dist/index.ts",
   "module": "dist/index.esm.js",
@@ -13,6 +13,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
     "prepare": "npm run build"
+  },
+ "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AathiEswar/avent-ui/tree/main/src/components/Magneto"
   },
   "keywords": [
     "menu",

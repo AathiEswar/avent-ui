@@ -1,6 +1,6 @@
 {
   "name": "@avent-ui/magneto",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Container for Magnetic Effect",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -13,6 +13,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
     "prepare": "npm run build"
+  },
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AathiEswar/avent-ui/tree/main/src/components/ham-menu"
   },
   "keywords": [
     "magnet",

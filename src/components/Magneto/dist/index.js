@@ -6101,6 +6101,7 @@ var gsapWithCSS = gsap.registerPlugin(CSSPlugin) || gsap;
     // to protect from tree shaking
 gsapWithCSS.core.Tween;
 
+// MIT License
 var Magneto = function (_a) {
     var children = _a.children, amplitudex = _a.amplitudex, periodx = _a.periodx, amplitudey = _a.amplitudey, periody = _a.periody, props = __rest(_a, ["children", "amplitudex", "periodx", "amplitudey", "periody"]);
     var magnetic = React.useRef(null);

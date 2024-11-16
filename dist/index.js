@@ -6210,12 +6210,11 @@ var useButtonContext = function () {
     return context;
 };
 
-var StyledHamMenu$1 = dt.section(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n"], ["\n"])));
+var StyledHamMenu$1 = dt.section(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n  font-family: Arial, Helvetica, sans-serif;\n"], ["\n  font-family: Arial, Helvetica, sans-serif;\n"])));
 var HamMenu = React.forwardRef(function (props, ref) {
-    var children = props.children, as = props.as, className = props.className, style = props.style, otherProps = __rest(props, ["children", "as", "className", "style"]);
-    var Tag = as || 'section';
+    var children = props.children; props.as; var className = props.className, style = props.style, otherProps = __rest(props, ["children", "as", "className", "style"]);
     return (React.createElement(ButtonProvider, null,
-        React.createElement(StyledHamMenu$1, __assign({ as: Tag, className: "".concat(className), ref: ref }, otherProps, { style: style }), children)));
+        React.createElement(StyledHamMenu$1, __assign({ className: "".concat(className), ref: ref }, otherProps, { style: style }), children)));
 });
 HamMenu.displayName = "HamMenu";
 var templateObject_1$8;
