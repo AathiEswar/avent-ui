@@ -53,6 +53,6 @@ import { Component } from '@avent-ui/component-name';
  **Note:** Each component comes with unique properties and usage patterns. For detailed information and examples, please refer to the documentation specific to each component.
 
  ## List Of Components : 
- [Magneto ](src/components/ham-menu/README.md) <br/>
- [Ham Menu](src/components/Magneto/README.md)
+ [Magneto ](src/components/Magneto/README.md) <br/>
+ [Ham Menu](src/components/ham-menu/README.md)
 
