@@ -1,6 +1,7 @@
 import React, { ReactNode, HTMLAttributes } from 'react';
 interface MagnetoProps extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode;
+    className: string;
     amplitudex?: number;
     periodx?: number;
     amplitudey?: number;

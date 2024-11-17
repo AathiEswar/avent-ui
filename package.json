@@ -1,6 +1,6 @@
 {
-  "name": "@aathieswar/avent-ui",
-  "version": "1.0.4",
+  "name": "avent-ui",
+  "version": "1.0.5",
   "description": "The best UI library for Typescript and React",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -36,9 +36,9 @@
   "author": "Aathi Eswar S",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AathiEswar/aventure/issues"
+    "url": "https://github.com/AathiEswar/avent-ui/issues"
   },
-  "homepage": "https://github.com/AathiEswar/aventure#readme",
+  "homepage": "https://github.com/AathiEswar/avent-ui#readme",
   "dependencies": {
     "framer-motion": "^11.11.17",
     "react": "^17.0.0 || ^18.0.0",

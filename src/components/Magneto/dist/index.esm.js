@@ -6101,7 +6101,7 @@ gsapWithCSS.core.Tween;
 
 // MIT License
 var Magneto = function (_a) {
-    var children = _a.children, amplitudex = _a.amplitudex, periodx = _a.periodx, amplitudey = _a.amplitudey, periody = _a.periody, props = __rest(_a, ["children", "amplitudex", "periodx", "amplitudey", "periody"]);
+    var children = _a.children, className = _a.className, amplitudex = _a.amplitudex, periodx = _a.periodx, amplitudey = _a.amplitudey, periody = _a.periody, props = __rest(_a, ["children", "className", "amplitudex", "periodx", "amplitudey", "periody"]);
     var magnetic = useRef(null);
     useEffect(function () {
         var xTo = gsapWithCSS.quickTo(magnetic.current, "x", { duration: 1, ease: "elastic.out(".concat(amplitudex || 1, ", ").concat(periodx || 0.3, ")") });
@@ -6130,7 +6130,7 @@ var Magneto = function (_a) {
             }
         };
     }, [amplitudex, periodx, amplitudey, periody]);
-    return (React.createElement("div", __assign({ ref: magnetic }, props), children));
+    return (React.createElement("div", __assign({ ref: magnetic, className: "".concat(className) }, props), children));
 };
 
 export { Magneto };
