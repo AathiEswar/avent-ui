@@ -14,7 +14,7 @@
     "build": "rollup -c",
     "prepare": "npm run build"
   },
- "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/AathiEswar/avent-ui/tree/main/src/components/Magneto"
   },
@@ -24,11 +24,13 @@
     "ham-menu",
     "nav-bar",
     "burger",
-    "ham-burger-menu"
+    "ham-burger-menu",
+    "avent",
+    "avent-ui"
   ],
   "author": "Aathi Eswar S",
   "license": "MIT",
-    "bugs": {
+  "bugs": {
     "url": "https://github.com/AathiEswar/avent-ui/issues"
   },
   "homepage": "https://github.com/AathiEswar/avent-ui/blob/main/src/components/ham-menu/README.md",
@@ -38,11 +40,15 @@
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
     "postcss-cli": "^11.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "rollup": "^4.27.2",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
+    "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3"
   },
   "dependencies": {
