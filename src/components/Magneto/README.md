@@ -27,13 +27,13 @@ module.exports = {
 }
 
 ```
-### 2. Import any Component
+### 3. Import any Component
 
 ```jsx
 import { Magneto } from '@avent-ui/magneto';
 
 ```
-### 3. Use it as a replacement for any container tag
+### 4. Use it as a replacement for any container tag
 
 ```jsx
 <Magneto>
