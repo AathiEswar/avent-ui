@@ -1,9 +1,9 @@
-import React from 'react';
-interface HamMenuTitleProps extends React.HTMLProps<HTMLParagraphElement> {
+import React, { ElementType } from 'react';
+interface HamMenuTitleProps {
     children: React.ReactNode;
     style?: React.CSSProperties;
-    as?: keyof JSX.IntrinsicElements;
+    as?: ElementType;
     className?: string;
 }
-declare const HamMenuTitle: React.ForwardRefExoticComponent<Omit<HamMenuTitleProps, "ref"> & React.RefAttributes<HTMLParagraphElement>>;
+declare const HamMenuTitle: React.ForwardRefExoticComponent<HamMenuTitleProps & React.RefAttributes<HTMLParagraphElement>>;
 export default HamMenuTitle;

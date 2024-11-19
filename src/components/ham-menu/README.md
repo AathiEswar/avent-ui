@@ -1,6 +1,6 @@
 ## Avent UI - Ham Menu
 
-The **Hamneu** component is a hamburger menu with a cool curve animation. It accepts normal props as well as custom animation props for smooth transitions. You can also control animation delays for links and sublinks.
+The **Ham Menu** component is a hamburger menu with a cool curve animation. It accepts normal props as well as custom motion props for smooth transitions. You can also control animations for links and sublinks.
 
 ### Installation
 
@@ -9,8 +9,26 @@ The **Hamneu** component is a hamburger menu with a cool curve animation. It acc
 ```jsx
 npm install @avent-ui/ham-menu
 ```
+### 2 . Tailwind CSS setup 
 
-### 2. Import necessary Components
+AventUI is built on top of Tailwind CSS, so you need to install Tailwind CSS first. You can follow the official [installation guide](https://tailwindcss.com/docs/installation) to install Tailwind CSS. Then you need to add the following code to your tailwind.config.js file:
+```jsx
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  content: [
+    "./src/**/*.{js,jsx,ts,tsx}",
+    // make sure it's pointing to the ROOT node_module
+    "./node_modules/@avent-ui/ham-menu/dist/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+
+```
+
+### 3. Import necessary Components
 
 ```jsx
 import {
@@ -22,11 +40,11 @@ import {
 	HamMenuSubContent,
 	HamMenuSubLink,
 	HamMenuTitle,
-  HamMenuCurve
+  HamMenuCurve,
 } from "@avent-ui/ham-menu";
 ```
 
-### 3. Use it as given below
+### 4. Use it as given below
 
 ```jsx
 <HamMenu>
@@ -36,19 +54,19 @@ import {
 		<HamMenuTitle>Navigation</HamMenuTitle>
 
 		<HamMenuContent>
-			<HamMenuLink> main link 1 </HamMenuLink>
-			<HamMenuLink> main link 2 </HamMenuLink>
-			<HamMenuLink> main link 3 </HamMenuLink>
-			<HamMenuLink> main link 4 </HamMenuLink>
-			<HamMenuLink> main link 5 </HamMenuLink>
+			<HamMenuLink> Main link 1 </HamMenuLink>
+			<HamMenuLink> Main link 2 </HamMenuLink>
+			<HamMenuLink> Main link 3 </HamMenuLink>
+			<HamMenuLink> Main link 4 </HamMenuLink>
+			<HamMenuLink> Main link 5 </HamMenuLink>
 		</HamMenuContent>
 
 		<HamMenuSubContent>
-			<HamMenuSubLink> sub link 1 </HamMenuSubLink>
-			<HamMenuSubLink> sub link 1 </HamMenuSubLink>
-			<HamMenuSubLink> sub link 1 </HamMenuSubLink>
-			<HamMenuSubLink> sub link 1 </HamMenuSubLink>
-			<HamMenuSubLink> sub link 1 </HamMenuSubLink>
+			<HamMenuSubLink> Sub link 1 </HamMenuSubLink>
+			<HamMenuSubLink> Sub link 2 </HamMenuSubLink>
+			<HamMenuSubLink> Sub link 3 </HamMenuSubLink>
+			<HamMenuSubLink> Sub link 4 </HamMenuSubLink>
+			<HamMenuSubLink> Sub link 5 </HamMenuSubLink>
 		</HamMenuSubContent>
 	</HamMenuBar>
 </HamMenu>

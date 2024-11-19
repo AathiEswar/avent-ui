@@ -12,5 +12,5 @@ interface HamMenuContentsProps {
     };
     [key: string]: any;
 }
-declare const HamMenuContents: React.ForwardRefExoticComponent<Omit<HamMenuContentsProps, "ref"> & React.RefAttributes<HTMLDivElement>>;
+declare const HamMenuContents: React.MemoExoticComponent<React.ForwardRefExoticComponent<Omit<HamMenuContentsProps, "ref"> & React.RefAttributes<HTMLDivElement>>>;
 export default HamMenuContents;
