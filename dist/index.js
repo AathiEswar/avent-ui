@@ -6168,21 +6168,21 @@ var HamMenu = React.forwardRef(function (props, ref) {
     var children = props.children, as = props.as, className = props.className, style = props.style, otherProps = __rest(props, ["children", "as", "className", "style"]);
     var Component = as || 'section';
     return (React.createElement(ButtonProvider, null,
-        React.createElement(Component, __assign({ className: " ".concat(className), ref: ref }, otherProps, { style: style }), children)));
+        React.createElement(Component, __assign({ className: "".concat(className), ref: ref }, otherProps, { style: style }), children)));
 });
 HamMenu.displayName = "HamMenu";
 
 var HamMenuBurger = React.forwardRef(function (props, ref) {
     props.children; props.as; var className = props.className, style = props.style, otherProps = __rest(props, ["children", "as", "className", "style"]);
     var _a = useButtonContext(), isActive = _a.isActive, toggleActive = _a.toggleActive;
-    return (React.createElement("button", __assign({ className: "fixed top-0 right-0 lg:m-[20px] lg:h-[80px] lg:w-[80px] rounded-full bg-[rgb(96,255,96)] flex justify-center items-center cursor-pointer z-[2] shadow-[0_0_5px_0_rgb(45,45,45)] \n    m-[10px] h-[60px] w-[60px] ".concat(className), ref: ref }, otherProps, { style: style, onClick: toggleActive }),
+    return (React.createElement("button", __assign({ className: "fixed top-0 right-0 lg:m-[20px] lg:h-[80px] lg:w-[80px] rounded-full bg-[rgb(96,255,96)] flex justify-center items-center cursor-pointer z-[2] shadow-[0_0_5px_0_rgb(45,45,45)] \n    m-[10px] h-[60px] w-[60px] ".concat(className || ''), ref: ref }, otherProps, { style: style, onClick: toggleActive }),
         React.createElement("div", { className: "burger w-full relative before:content-[''] before:block before:w-[40%] before:h-[2px] before:bg-black before:absolute before:left-[30%] before:transition-all before:duration-500\n      after:content-[''] after:block after:w-[40%] after:h-[2px] after:bg-black after:absolute after:left-[30%] after:transition-all after:duration-500 \n      ".concat(isActive ? 'before:rotate-[-45deg] before:top-[1px] after:rotate-[45deg] after:top-[-1px]' : 'before:top-[-5px] after:top-[5px]') })));
 });
 HamMenuBurger.displayName = 'HamMenuBurger';
 
 var HamMenuBar = React.forwardRef(function (props, ref) {
-    var children = props.children; props.className; props.classNameInner; var classNameOuter = props.classNameOuter, style = props.style, motionProp = props.motionProp, as = props.as, otherProps = __rest(props, ["children", "className", "classNameInner", "classNameOuter", "style", "motionProp", "as"]);
-    var _a = useButtonContext(), isActive = _a.isActive; _a.toggleBackgroundColor; _a.backgroundColor;
+    var children = props.children, className = props.className, style = props.style, motionProp = props.motionProp, as = props.as; __rest(props, ["children", "className", "style", "motionProp", "as"]);
+    var isActive = useButtonContext().isActive;
     var Container = as || 'section';
     var MotionStyledMenuContainer = framerMotion.motion(Container);
     var menuSlide = motionProp || {
@@ -6198,7 +6198,8 @@ var HamMenuBar = React.forwardRef(function (props, ref) {
             transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] },
         },
     };
-    return (React.createElement(framerMotion.AnimatePresence, { mode: "wait" }, isActive && (React.createElement(MotionStyledMenuContainer, __assign({ variants: menuSlide, initial: "initial", animate: "animate", exit: "exit", ref: ref, style: style, className: "bg-black fixed top-0 right-0 h-screen text-white w-full z-[1] lg:w-[40%] overflow-y-scroll p-[40px_80px] h-full flex flex-col justify-between gap-[12px] max-md:p-[60px] max-sm:p-[40px] ".concat(classNameOuter) }, otherProps), children))));
+    return (React.createElement(framerMotion.AnimatePresence, { mode: "wait" }, isActive && (React.createElement(MotionStyledMenuContainer, { variants: menuSlide, initial: "initial", animate: "animate", exit: "exit", ref: ref, style: style, className: "bg-black fixed top-0 right-0 h-screen text-white w-full z-[1] lg:w-[30%] ".concat(className || '') },
+        React.createElement("div", { className: "ham-menu-inner-bar overflow-y-scroll p-[40px_10%] h-full flex flex-col justify-between gap-[12px] max-md:p-[60px] max-sm:p-[40px]" }, children)))));
 });
 HamMenuBar.displayName = 'HamMenuBar';
 
@@ -6213,7 +6214,7 @@ var HamMenuMainLink = React.forwardRef(function (props, ref) {
     var children = props.children, className = props.className, as = props.as, style = props.style, index = props.index, slide = props.slide, otherProps = __rest(props, ["children", "className", "as", "style", "index", "slide"]);
     var Component = as || 'a';
     framerMotion.motion.create(Component);
-    return (React.createElement(framerMotion.motion.a, __assign({ ref: ref, style: style, className: "text-[4dvw] no-underline text-white whitespace-nowrap overflow-hidden text-ellipsis max-md:text-[50px] max-sm:text-[42px]  max-xs:text-[40px] ".concat(className), key: index, custom: index, variants: slide, animate: "enter", exit: "exit", initial: "initial" }, otherProps), children));
+    return (React.createElement(framerMotion.motion.a, __assign({ ref: ref, style: style, className: "no-underline text-white whitespace-nowrap overflow-hidden text-ellipsis text-[42px] md:text-[50px] xl:text-[4dvw] text-center md:text-left ".concat(className || ''), key: index, custom: index, variants: slide, animate: "enter", exit: "exit", initial: "initial" }, otherProps), children));
 });
 HamMenuMainLink.displayName = "HamMenuMainLink";
 
@@ -6235,7 +6236,7 @@ var HamMenuContents = React.memo(React.forwardRef(function (props, ref) {
             }); }
         });
     }, [animateDelay, motionProp]);
-    return (React.createElement(Component, __assign({ ref: ref, className: "flex flex-col mt-3 gap-3 ".concat(className), style: style }, otherProps), React.Children.map(children, function (child, index) {
+    return (React.createElement(Component, __assign({ ref: ref, className: "flex flex-col mt-3 gap-3 ".concat(className || ''), style: style }, otherProps), React.Children.map(children, function (child, index) {
         return (child && React.cloneElement(child, { index: index, slide: slide }));
     })));
 }));
@@ -6266,9 +6267,30 @@ var HamMenuSubContent = React.forwardRef(function (props, ref) {
             transition: { duration: 0.5 },
         }
     };
-    return (React.createElement(Component, __assign({ ref: ref, style: style, className: "flex gap-4 flex-wrap ".concat(className) }, otherProps), React.Children.map(children, function (child, index) {
+    return (React.createElement(Component, __assign({ ref: ref, style: style, className: "flex gap-4 flex-wrap justify-center ".concat(className) }, otherProps), React.Children.map(children, function (child, index) {
         return (child && React.cloneElement(child, { index: index, footerLinkPop: footerLinkPop }));
     })));
+});
+
+var initialPath = "M100 0 L100 ".concat(window.innerHeight, " Q-100 ").concat(window.innerHeight / 2, " 100 0");
+var targetPath = "M100 0 L100 ".concat(window.innerHeight, " Q100 ").concat(window.innerHeight / 2, " 100 0");
+var pathAnimation = {
+    initial: {
+        d: initialPath
+    },
+    enter: {
+        d: targetPath,
+        transition: { duration: 1, ease: [0.76, 0, 0.24, 1] }
+    },
+    exit: {
+        d: initialPath,
+        transition: { duration: 1, ease: [0.76, 0, 0.24, 1] }
+    }
+};
+var HamMenuCurve = React.forwardRef(function (_a, ref) {
+    var className = _a.className, style = _a.style; __rest(_a, ["className", "style"]);
+    return (React.createElement("svg", { ref: ref, className: "absolute top-0 left-[-99px] w-[100px] h-screen stroke-none" },
+        React.createElement(framerMotion.motion.path, { style: style, initial: 'initial', variants: pathAnimation, animate: 'enter', exit: "exit", className: "h-screen ".concat(className || ''), d: initialPath })));
 });
 
 exports.Button = Button;
@@ -6276,6 +6298,7 @@ exports.HamMenu = HamMenu;
 exports.HamMenuBar = HamMenuBar;
 exports.HamMenuBurger = HamMenuBurger;
 exports.HamMenuContent = HamMenuContents;
+exports.HamMenuCurve = HamMenuCurve;
 exports.HamMenuLink = HamMenuMainLink;
 exports.HamMenuSubContent = HamMenuSubContent;
 exports.HamMenuSubLink = HamMenuSubLink;

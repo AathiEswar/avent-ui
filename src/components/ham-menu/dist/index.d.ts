@@ -1,4 +1,4 @@
-import './styles/style.css';
+import './styles/tailwind.css';
 export { default as HamMenu } from './hammenu';
 export { default as HamMenuBurger } from './hammenu-burger';
 export { default as HamMenuBar } from './hammenu-bar';
