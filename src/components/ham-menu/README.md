@@ -50,7 +50,8 @@ import {
 <HamMenu>
 	<HamMenuBurger />
 	<HamMenuBar>
-		<HamMenuCurve /> // add if u want a curved menu animation
+		// add if u want a curved menu animation
+		<HamMenuCurve /> 
 		<HamMenuTitle>Navigation</HamMenuTitle>
 
 		<HamMenuContent>

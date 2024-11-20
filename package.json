@@ -1,6 +1,6 @@
 {
   "name": "avent-ui",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "The best UI library for Typescript and React",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -31,7 +31,9 @@
     "animation",
     "visuals",
     "react",
-    "typescript"
+    "typescript",
+    "avent",
+    "avent-ui"
   ],
   "author": "Aathi Eswar S",
   "license": "MIT",
@@ -42,9 +44,7 @@
   "dependencies": {
     "framer-motion": "^11.11.17",
     "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0",
-    "rollup-plugin-postcss": "^4.0.2",
-    "styled-components": "^6.1.13"
+    "react-dom": "^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",
@@ -52,9 +52,13 @@
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
     "rollup": "^4.25.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
+    "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3"
   }
 }

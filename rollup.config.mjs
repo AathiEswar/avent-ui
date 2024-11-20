@@ -30,6 +30,14 @@ export default {
       exclude: ['node_modules/**' , '**/node_modules/**'],
       babelHelpers: 'bundled',
     }),
+    postcss({
+      extensions: [".css"],
+      extract: "dist/styles.css",
+      plugins: [
+        tailwindcss,
+        autoprefixer, 
+      ],
+    }),
   ],
   external: ['react', 'react-dom', 'framer-motion'],
 };
