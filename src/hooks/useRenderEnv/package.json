@@ -1,0 +1,50 @@
+{
+  "name": "@avent-ui/use-render-env",
+  "version": "1.0.5",
+  "description": "Hook to check server side or client side render along with loading state",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AathiEswar/avent-ui/tree/main/src/components/ham-menu"
+  },
+  "keywords": [
+    "magnet",
+    "magnetic",
+    "avent-ui",
+    "avent"
+  ],
+  "author": "Aathi Eswar S",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AathiEswar/avent-ui/issues"
+  },
+  "homepage": "https://github.com/AathiEswar/avent-ui/blob/main/src/components/Magneto/README.md",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^28.0.1",
+    "@rollup/plugin-node-resolve": "^15.3.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "rollup": "^4.27.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "typescript": "^5.6.3"
+  }
+}
