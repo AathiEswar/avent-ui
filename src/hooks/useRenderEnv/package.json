@@ -19,10 +19,12 @@
     "url": "git+https://github.com/AathiEswar/avent-ui/tree/main/src/hooks/useRenderEnv"
   },
   "keywords": [
-    "magnet",
-    "magnetic",
     "avent-ui",
-    "avent"
+    "avent",
+    "hook",
+    "ssr",
+    "csr",
+    "loading"
   ],
   "author": "Aathi Eswar S",
   "license": "MIT",
