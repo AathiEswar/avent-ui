@@ -1,6 +1,6 @@
 {
   "name": "avent-ui",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "The best UI library for Typescript and React",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
