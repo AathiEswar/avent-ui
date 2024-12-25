@@ -35,5 +35,5 @@ function useRenderEnv() {
     return ssr;
 }
 
-export { useRenderEnv as default };
+export { useRenderEnv };
 //# sourceMappingURL=index.esm.js.map
