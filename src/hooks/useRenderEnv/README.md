@@ -10,7 +10,6 @@ The **useRenderEnv** hook determines whether the component is being rendered on 
 npm install @avent-ui/useRenderEnv
 ```
 
-```
 ### 3. Import the hook
 
 ```jsx
