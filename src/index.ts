@@ -20,9 +20,10 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+import './styles/tailwind.css'
+
 import './components/Magneto/src/tailwind.css'
 import './components/ham-menu/src/styles/tailwind.css'
-import './styles/tailwind.css'
 
 export { default as Button } from './Button';
 export { default as Magneto } from './components/Magneto/src/Magneto'
@@ -35,3 +36,5 @@ export { default as HamMenuContent} from './components/ham-menu/src/hammenu-cont
 export { default as HamMenuSubLink } from './components/ham-menu/src/hammenu-sublink';
 export { default as HamMenuSubContent } from './components/ham-menu/src/hammenu-subcontent';
 export { default as HamMenuCurve } from './components/ham-menu/src/hammenu-curve';
+
+export {default as useRenderEnv } from './hooks/useRenderEnv/src/useRenderEnv'

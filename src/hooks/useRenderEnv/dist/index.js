@@ -37,5 +37,5 @@ function useRenderEnv() {
     return ssr;
 }
 
-exports.useRenderEnv = useRenderEnv;
+module.exports = useRenderEnv;
 //# sourceMappingURL=index.js.map
