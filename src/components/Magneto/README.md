@@ -27,7 +27,7 @@ module.exports = {
 }
 
 ```
-### 3. Import any Component
+### 3. Import the Component
 
 ```jsx
 import { Magneto } from '@avent-ui/magneto';

@@ -13,7 +13,7 @@ npm install @avent-ui/useRenderEnv
 ### 3. Import the hook
 
 ```jsx
-import useRenderEnv from '@avent-ui/useRenderEnv';
+import { useRenderEnv } from '@avent-ui/useRenderEnv';
 
 ```
 ### 4. Use it to find your Rendering Environment
