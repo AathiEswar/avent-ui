@@ -20,15 +20,5 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import React from 'react';
+export {default as useRenderEnv} from './useRenderEnv' 
 
-type ButtonProps = {
-  label: string;
-  onClick: () => void;
-};
-
-const Button: React.FC<ButtonProps> = ({ label, ...props }) => {
-  return <button {...props}>{label}</button>;
-};
-
-export default Button;

@@ -6343,5 +6343,188 @@ function useRenderEnv() {
     return ssr;
 }
 
-export { Button, HamMenu, HamMenuBar, HamMenuBurger, HamMenuContents as HamMenuContent, HamMenuCurve, HamMenuMainLink as HamMenuLink, HamMenuSubContent, HamMenuSubLink, HamMenuTitle, Magneto, useRenderEnv };
+var SimpleTransition = function (_a) {
+    var children = _a.children;
+    return (React.createElement(React.Fragment, null,
+        children,
+        React.createElement(motion.div, { className: 'slide-in fixed top-0 left-0 w-screen h-screen bg-black z-50', style: { transformOrigin: 'bottom' }, initial: { scaleY: 0 }, animate: { scaleY: 0 }, exit: { scaleY: 1 }, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } }),
+        React.createElement(motion.div, { className: 'slide-out fixed top-0 left-0 w-screen h-screen bg-black z-50', style: { transformOrigin: 'top' }, initial: { scaleY: 1 }, animate: { scaleY: 0 }, exit: { scaleY: 0 }, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } })));
+};
+
+var PageTransitionContext = createContext({});
+var PageTransition = function (_a) {
+    var children = _a.children, TransitionProp = _a.TransitionProp;
+    return (React.createElement(PageTransitionContext.Provider, { value: {} },
+        React.createElement(AnimatePresence, { mode: "wait" }, React.Children.map(children, function (child) {
+            return TransitionProp ? (React.createElement(TransitionProp, null, child)) : (React.createElement(SimpleTransition, null, child));
+        }))));
+};
+
+// export const anim = (variants: Variants): MotionProps => ({
+//   initial: "initial",
+//   animate: "enter",
+//   exit: "exit",
+//   variants,
+// });
+var anim = function (variants, custom) { return ({
+    initial: "initial",
+    animate: "enter",
+    exit: "exit",
+    variants: variants,
+    custom: custom
+}); };
+
+var DennisSnellenberg = function (_a) {
+    var children = _a.children;
+    return (React.createElement("div", { className: 'min-h-screen w-full' },
+        children,
+        React.createElement(SVGMask, null)));
+};
+var SVGMask = function () {
+    var innerHeight = window.innerHeight, innerWidth = window.innerWidth;
+    var initialPath = "M0 300 C0,300 ".concat(innerWidth / 2, ",-300 ").concat(innerWidth, ",300 \n                       L").concat(innerWidth, ",").concat(innerHeight + 300, " \n                       C").concat(innerWidth, ",").concat(innerHeight + 300, " ").concat(innerWidth / 2, ",").concat(innerHeight + 600, " 0,").concat(innerHeight + 300, "\n                       Z\n                       ");
+    var finalPath = "M0 300 C0,300 ".concat(innerWidth / 2, ",300 ").concat(innerWidth, ",300 \n                       L").concat(innerWidth, ",").concat(innerHeight, " \n                       C").concat(innerWidth, ",").concat(innerHeight, " ").concat(innerWidth / 2, ",").concat(innerHeight, " 0,").concat(innerHeight, "\n                       Z\n                       ");
+    var curve = {
+        initial: {
+            d: initialPath,
+        },
+        enter: {
+            d: finalPath,
+            transition: {
+                duration: 1,
+                ease: [0.76, 0, 0.24, 1]
+            },
+        },
+        exit: {
+            d: initialPath,
+        }
+    };
+    var slide = {
+        initial: {
+            top: "-300px"
+        },
+        enter: {
+            top: "-100vh",
+            transition: {
+                duration: 1,
+                ease: [0.76, 0, 0.24, 1]
+            },
+            transitionEnd: {
+                top: "100dvh",
+            },
+        },
+        exit: {
+            top: "-300px",
+            transition: {
+                duration: 1,
+                ease: [0.76, 0, 0.24, 1]
+            },
+        }
+    };
+    return (React.createElement(motion.svg, __assign({}, anim(slide), { className: 'w-screen fixed  left-0 pointer-events-none', style: { height: "calc(100vh + 600px)" } }),
+        React.createElement(motion.path, __assign({}, anim(curve)))));
+};
+
+var Elementis = function (_a) {
+    var children = _a.children;
+    var divCount = 30;
+    var slide = {
+        initial: {
+            scaleY: 1,
+        },
+        enter: function (index) { return ({
+            scaleY: 0,
+            transition: {
+                duration: 0.5,
+                delay: (divCount - index) * 0.01,
+                ease: [0.12, 0, 0.39, 0]
+            },
+            transitionEnd: {
+                transformOrigin: 'bottom',
+            }
+        }); },
+        exit: function (index) { return ({
+            scaleY: 1,
+            transition: {
+                duration: 0.5,
+                delay: (divCount - index) * 0.01,
+                ease: [0.12, 0, 0.39, 0]
+            },
+        }); },
+    };
+    return (React.createElement(React.Fragment, null,
+        React.createElement("div", { className: 'h-screen w-full flex flex-col fixed top-0 left-0 pointer-events-none z-50' }, Array.from({ length: divCount }).map(function (_, index) {
+            return (React.createElement("div", { className: 'h-full w-full' },
+                React.createElement(motion.div, __assign({}, anim(slide, index), { key: index, className: 'bg-green-300 h-full w-screen', style: { transformOrigin: "top" } }))));
+        })),
+        children));
+};
+
+var SimpleTransitionLR = function (_a) {
+    var children = _a.children;
+    return (React.createElement(React.Fragment, null,
+        children,
+        React.createElement(motion.div, { className: 'slide-in fixed top-0 left-0 w-screen h-screen bg-black z-50', style: { transformOrigin: 'left' }, initial: { scaleX: 0 }, animate: { scaleX: 0 }, exit: { scaleX: 1 }, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } }),
+        React.createElement(motion.div, { className: 'slide-out fixed top-0 left-0 w-screen h-screen bg-black z-50', style: { transformOrigin: 'right' }, initial: { scaleX: 1 }, animate: { scaleX: 0 }, exit: { scaleX: 0 }, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } })));
+};
+
+var StackOverLap = function (_a) {
+    var children = _a.children;
+    var slide = {
+        initial: {
+            top: '100dvh'
+        },
+        enter: {
+            top: '100dvh',
+        },
+        exit: {
+            top: '0',
+            transition: {
+                duration: 1,
+                ease: [0.76, 0, 0.24, 1]
+            }
+        }
+    };
+    var prespective = {
+        initial: {
+            y: 0,
+            scale: 1,
+            opacity: 1,
+        },
+        enter: {
+            y: 0,
+            scale: 1,
+            opacity: 1,
+        },
+        exit: {
+            y: -100,
+            scale: 0.9,
+            opacity: 0.5,
+            transition: {
+                duration: 1.2,
+                ease: [0.76, 0, 0.24, 1]
+            }
+        }
+    };
+    return (React.createElement("div", { className: 'bg-black' },
+        React.createElement(motion.div, __assign({}, anim(slide), { className: 'h-screen w-screen bg-white fixed top-0 left-0 z-20' })),
+        React.createElement(motion.div, __assign({}, anim(prespective), { className: '' }),
+            React.createElement(motion.div
+            // {...anim(opacity)} 
+            , { 
+                // {...anim(opacity)} 
+                className: 'bg-white h-screen w-screen' }, children))));
+};
+
+var StaggerBlockTransition = function (_a) {
+    var children = _a.children;
+    var staggerDivCount = 10;
+    var ease = [0.22, 1, 0.36, 1];
+    return (React.createElement(React.Fragment, null,
+        React.createElement("div", { className: 'flex' }, Array.from({ length: staggerDivCount }).map(function (_, index) { return (React.createElement(motion.div, { key: index, className: "w-[25dvw] h-screen bg-black fixed top-0 left-[".concat((100 / staggerDivCount * index), "dvw] z-50 flex-1"), style: { transformOrigin: 'top' }, initial: { scaleY: 0 }, animate: { scaleY: 0 }, exit: { scaleY: 1 }, transition: { duration: 1, ease: ease, delay: ((staggerDivCount - index) * 0.05) } })); })),
+        children,
+        React.createElement("div", { className: 'flex' }, Array.from({ length: staggerDivCount }).map(function (_, index) { return (React.createElement(motion.div, { key: index, className: "w-[25dvw] h-screen bg-black fixed top-0 left-[".concat((100 / staggerDivCount * index), "dvw] z-50 flex-1"), style: { transformOrigin: 'bottom' }, initial: { scaleY: 1 }, animate: { scaleY: 0 }, exit: { scaleY: 0 }, transition: { duration: 1, ease: ease, delay: ((staggerDivCount - index) * 0.05) } })); }))));
+};
+
+export { Button, DennisSnellenberg as CurveCover, HamMenu, HamMenuBar, HamMenuBurger, HamMenuContents as HamMenuContent, HamMenuCurve, HamMenuMainLink as HamMenuLink, HamMenuSubContent, HamMenuSubLink, HamMenuTitle, SimpleTransitionLR as LeftToRightScreen, Magneto, PageTransition as PageTransitionContext, SimpleTransition as SimpleScreen, StackOverLap, StaggerBlockTransition as StaggerBlock, Elementis as StaggerScreen, useRenderEnv };
 //# sourceMappingURL=index.esm.js.map

@@ -1,1 +1,1 @@
-export { default } from './useRenderEnv';
+export { default as useRenderEnv } from './useRenderEnv';

@@ -20,15 +20,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import React from 'react';
+import { useEffect,useState } from 'react'
+import { renderTypes } from './types';
 
-type ButtonProps = {
-  label: string;
-  onClick: () => void;
-};
+function useRenderEnv(): renderTypes {
+  const isServer : boolean = (typeof window === 'undefined');
+  const isClient : boolean = (typeof window !== 'undefined');
 
-const Button: React.FC<ButtonProps> = ({ label, ...props }) => {
-  return <button {...props}>{label}</button>;
-};
+  const [ssr, setIsSsr] = useState<renderTypes>({
+    isServer: isServer,
+    isClient: isClient,
+    isLoading: true,
+  });
 
-export default Button;
+  useEffect(() => {
+    setIsSsr({
+      isServer: false,
+      isClient: true,
+      isLoading: false,
+    });
+  }, []);
+
+  return ssr;
+}
+
+
+export default useRenderEnv

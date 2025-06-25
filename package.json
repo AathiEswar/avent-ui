@@ -1,6 +1,6 @@
 {
   "name": "avent-ui",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "The best UI library for Typescript and React",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -42,9 +42,12 @@
   },
   "homepage": "https://github.com/AathiEswar/avent-ui#readme",
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.11.17",
     "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
+    "react-dom": "^17.0.0 || ^18.0.0",
+    "tailwind-merge": "^3.3.1"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",

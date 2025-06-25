@@ -20,15 +20,14 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-import React from 'react';
+import './styles/tailwind.css'
 
-type ButtonProps = {
-  label: string;
-  onClick: () => void;
-};
-
-const Button: React.FC<ButtonProps> = ({ label, ...props }) => {
-  return <button {...props}>{label}</button>;
-};
-
-export default Button;
+export { default as HamMenu } from './hammenu' 
+export { default as HamMenuBurger } from './hammenu-burger'
+export { default as HamMenuBar} from './hammenu-bar'
+export { default as HamMenuTitle } from './hammenu-title';
+export { default as HamMenuLink } from './hammenu-mainLink'
+export { default as HamMenuContent} from './hammenu-content'
+export { default as HamMenuSubLink } from './hammenu-sublink';
+export { default as HamMenuCurve } from './hammenu-curve';
+export { default as HamMenuSubContent } from './hammenu-subcontent';
