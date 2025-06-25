@@ -59,10 +59,10 @@ return (
 
 ## List Of Trasitions :
 
-PageTransitionContext
-CurveCover
-StaggerScreen
-SimpleScreen
-LeftToRightScreen
-StackOverLap
-StaggerBlock
+PageTransitionContext<br/>
+CurveCover<br/>
+StaggerScreen<br/>
+SimpleScreen<br/>
+LeftToRightScreen<br/>
+StackOverLap<br/>
+StaggerBlock<br/>
