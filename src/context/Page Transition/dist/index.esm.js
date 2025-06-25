@@ -11362,7 +11362,6 @@ var SimpleTransition = function (_a) {
 var PageTransitionContext = createContext({});
 var PageTransition = function (_a) {
     var children = _a.children, TransitionProp = _a.TransitionProp;
-    console.log(TransitionProp, children);
     return (React__default.createElement(PageTransitionContext.Provider, { value: {} },
         React__default.createElement(AnimatePresence, { mode: "wait" }, React__default.Children.map(children, function (child) {
             return TransitionProp ? (React__default.createElement(TransitionProp, null, child)) : (React__default.createElement(SimpleTransition, null, child));

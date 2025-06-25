@@ -25,7 +25,7 @@ import './styles/tailwind.css'
 import './components/Magneto/src/tailwind.css'
 import './components/ham-menu/src/styles/tailwind.css'
 
-export { default as Button } from './Button';
+export { default as ButtonTest } from './Button';
 export { default as Magneto } from './components/Magneto/src/Magneto'
 export { default as HamMenu } from './components/ham-menu/src/hammenu'
 export { default as HamMenuBurger } from './components/ham-menu/src/hammenu-burger'
@@ -46,3 +46,5 @@ export { SimpleScreen } from './context/Page Transition/src/index'
 export { LeftToRightScreen } from './context/Page Transition/src/index'
 export { StackOverLap } from './context/Page Transition/src/index'
 export { StaggerBlock } from './context/Page Transition/src/index'
+
+export {Button} from "./components/Button/src/index"

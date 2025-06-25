@@ -20,7 +20,7 @@ module.exports = {
 	content: [
 		"./src/**/*.{js,jsx,ts,tsx}",
 		// make sure it's pointing to the ROOT node_module
-		"./node_modules/@avent-ui/magneto/dist/**/*.{js,ts,jsx,tsx}",
+		"./node_modules/@avent-ui/page-transition/dist/**/*.{js,ts,jsx,tsx}",
 	],
 	theme: {
 		extend: {},
