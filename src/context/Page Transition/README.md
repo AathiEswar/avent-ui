@@ -32,7 +32,7 @@ module.exports = {
 ### 3. Import the Context
 
 ```jsx
-import { PageTransitionContext } from "@avent-ui/magneto";
+import { PageTransitionContext } from "@avent-ui/page-transition";
 ```
 
 ### 4. Use it to wrap your routes
@@ -57,4 +57,12 @@ return (
 | ---------------- | :-------------------: | ----------------------- | ---------------: |
 | `TransitionProp` | `Composite ReactNode` | Type Of Page Transition | SimpleTransition |
 
-## List Of Trasitions : 
+## List Of Trasitions :
+
+PageTransitionContext
+CurveCover
+StaggerScreen
+SimpleScreen
+LeftToRightScreen
+StackOverLap
+StaggerBlock
