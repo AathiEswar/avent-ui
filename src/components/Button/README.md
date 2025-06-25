@@ -1,6 +1,6 @@
 ## AventUI - Button
 
-The **Button** component is a versatile, fully customizable button built with Tailwind CSS and powered by `class-variance-authority (CVA)`. It supports multiple variants, sizes, and disabled states, allowing you to use consistent and themeable buttons across your application.
+The **Button** component is a versatile, fully customizable button built with Tailwind CSS and powered by `class-variance-authority (CVA)`. It supports multiple variants, sizes, and disabled states, allowing you to use consistent and themeable buttons across your application which is also accessible to screen readers.
 
 ### Installation
 
@@ -82,8 +82,8 @@ import Button from '@avent-ui/button';
 
 | Prop       | Type                     | Description                            | Default   |
 |------------|--------------------------|----------------------------------------|-----------|
-| `variant`  | `"default" | "outline" | ...` | Button style variant                | `default` |
-| `size`     | `"xs" | "sm" | ...`     | Size of the button                    | `default` |
+| `variant`  | `"default" , "outline" , ...` | Button style variant                | `default` |
+| `size`     | `"xs" , "sm" , ...`     | Size of the button                    | `default` |
 | `disabled` | `boolean`                | Whether the button is disabled         | `false`   |
 | `...props` | `ButtonHTMLAttributes`   | Native button attributes (onClick etc) | —         |
 

@@ -1,6 +1,6 @@
 {
   "name": "@avent-ui/button",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Custom Button with Variants, Customization and Accessible for Screen Readers",
   "main": "dist/index.ts",
   "module": "dist/index.esm.js",
