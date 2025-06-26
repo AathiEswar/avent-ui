@@ -13,6 +13,7 @@ export { default as HamMenuSubLink } from './components/ham-menu/src/hammenu-sub
 export { default as HamMenuSubContent } from './components/ham-menu/src/hammenu-subcontent';
 export { default as HamMenuCurve } from './components/ham-menu/src/hammenu-curve';
 export { default as useRenderEnv } from './hooks/useRenderEnv/src/useRenderEnv';
+export { useScreenDimensions } from "./hooks/useScreenDimensions/src/index";
 export { PageTransitionContext } from './context/Page Transition/src/index';
 export { CurveCover } from './context/Page Transition/src/index';
 export { StaggerScreen } from './context/Page Transition/src/index';

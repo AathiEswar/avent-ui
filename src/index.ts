@@ -1,6 +1,6 @@
 // MIT License
 
-// Copyright (c) 2024 AathiEswar
+// Copyright (c) 2025 AathiEswar
 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -38,6 +38,7 @@ export { default as HamMenuSubContent } from './components/ham-menu/src/hammenu-
 export { default as HamMenuCurve } from './components/ham-menu/src/hammenu-curve';
 
 export { default as useRenderEnv } from './hooks/useRenderEnv/src/useRenderEnv'
+export { useScreenDimensions } from "./hooks/useScreenDimensions/src/index"
 
 export { PageTransitionContext } from './context/Page Transition/src/index'
 export { CurveCover } from './context/Page Transition/src/index'
@@ -47,4 +48,4 @@ export { LeftToRightScreen } from './context/Page Transition/src/index'
 export { StackOverLap } from './context/Page Transition/src/index'
 export { StaggerBlock } from './context/Page Transition/src/index'
 
-export {Button} from "./components/Button/src/index"
+export { Button } from "./components/Button/src/index"

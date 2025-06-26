@@ -6327,6 +6327,79 @@ function useRenderEnv() {
     return ssr;
 }
 
+var getInitialState = function (mobileBreakPoint, tabletBreakPoint) {
+    var _a, _b;
+    if (typeof window === 'undefined') {
+        return {
+            screenWidth: 1024,
+            screenHeight: 768,
+            devicePixelRatio: 1,
+            orientation: null,
+            isMobile: false,
+            isTablet: false,
+            isDesktop: true
+        };
+    }
+    var width = window.innerWidth;
+    return {
+        screenWidth: window.innerWidth,
+        screenHeight: window.innerHeight,
+        devicePixelRatio: window.devicePixelRatio || 1,
+        orientation: ((_b = (_a = window.screen) === null || _a === void 0 ? void 0 : _a.orientation) === null || _b === void 0 ? void 0 : _b.type) || null,
+        isMobile: width < mobileBreakPoint,
+        isTablet: width >= mobileBreakPoint && width < tabletBreakPoint,
+        isDesktop: width >= tabletBreakPoint
+    };
+};
+var useScreenDimensions = function (options) {
+    if (options === void 0) { options = {}; }
+    var _a = options.debounceMs, debounceMs = _a === void 0 ? 100 : _a, _b = options.mobileBreakPoint, mobileBreakPoint = _b === void 0 ? 768 : _b, _c = options.tabletBreakPoint, tabletBreakPoint = _c === void 0 ? 1024 : _c;
+    var initialState = getInitialState(mobileBreakPoint, tabletBreakPoint);
+    var _d = useState(initialState), dimensions = _d[0], setDimensions = _d[1];
+    var updateDimensions = function () {
+        var _a, _b;
+        if (typeof window === 'undefined')
+            return;
+        var width = window.innerWidth;
+        setDimensions({
+            screenWidth: window.innerWidth,
+            screenHeight: window.innerHeight,
+            devicePixelRatio: window.devicePixelRatio || 1,
+            orientation: ((_b = (_a = window.screen) === null || _a === void 0 ? void 0 : _a.orientation) === null || _b === void 0 ? void 0 : _b.type) || null,
+            isMobile: width < mobileBreakPoint,
+            isTablet: width >= mobileBreakPoint && width < tabletBreakPoint,
+            isDesktop: width >= tabletBreakPoint
+        });
+    };
+    useEffect(function () {
+        var _a;
+        if (typeof window === 'undefined')
+            return;
+        var timeoutId;
+        var debouncedResize = function () {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(updateDimensions, debounceMs);
+        };
+        var handleOrientationChange = function () {
+            clearTimeout(timeoutId);
+            timeoutId = setTimeout(updateDimensions, debounceMs);
+        };
+        window.addEventListener('resize', debouncedResize);
+        if ((_a = window.screen) === null || _a === void 0 ? void 0 : _a.orientation) {
+            window.screen.orientation.addEventListener('change', handleOrientationChange);
+        }
+        return function () {
+            var _a;
+            clearTimeout(timeoutId);
+            window.removeEventListener('resize', debouncedResize);
+            if ((_a = window.screen) === null || _a === void 0 ? void 0 : _a.orientation) {
+                window.screen.orientation.removeEventListener('change', handleOrientationChange);
+            }
+        };
+    }, [debounceMs]);
+    return __assign({}, dimensions);
+};
+
 var SimpleTransition = function (_a) {
     var children = _a.children;
     return (React.createElement(React.Fragment, null,
@@ -9627,5 +9700,5 @@ var Button = forwardRef(function (_a, ref) {
 });
 Button.displayName = "Button";
 
-export { Button, Button$1 as ButtonTest, DennisSnellenberg as CurveCover, HamMenu, HamMenuBar, HamMenuBurger, HamMenuContents as HamMenuContent, HamMenuCurve, HamMenuMainLink as HamMenuLink, HamMenuSubContent, HamMenuSubLink, HamMenuTitle, SimpleTransitionLR as LeftToRightScreen, Magneto, PageTransition as PageTransitionContext, SimpleTransition as SimpleScreen, StackOverLap, StaggerBlockTransition as StaggerBlock, Elementis as StaggerScreen, useRenderEnv };
+export { Button, Button$1 as ButtonTest, DennisSnellenberg as CurveCover, HamMenu, HamMenuBar, HamMenuBurger, HamMenuContents as HamMenuContent, HamMenuCurve, HamMenuMainLink as HamMenuLink, HamMenuSubContent, HamMenuSubLink, HamMenuTitle, SimpleTransitionLR as LeftToRightScreen, Magneto, PageTransition as PageTransitionContext, SimpleTransition as SimpleScreen, StackOverLap, StaggerBlockTransition as StaggerBlock, Elementis as StaggerScreen, useRenderEnv, useScreenDimensions };
 //# sourceMappingURL=index.esm.js.map
