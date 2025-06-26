@@ -1,37 +1,41 @@
 import { useEffect, useState } from 'react'
 import { ScreenDimensions, UseScreenDimensionsOptions } from '../types'
 
-
-const useScreenDimensions = (options: UseScreenDimensionsOptions = {}) => {
-  const { debounceMs = 100 } = options
-
-  const getInitialState = (): ScreenDimensions => {
-    if (typeof window === 'undefined') {
-      return {
-        screenWidth: 1024,
-        screenHeight: 768,
-        devicePixelRatio: 1,
-        orientation: null,
-        isMobile: false,
-        isTablet: false,
-        isDesktop: true
-      }
-    }
-
-    const width = window.innerWidth
-
+const getInitialState = (mobileBreakPoint: number, tabletBreakPoint: number): ScreenDimensions => {
+  if (typeof window === 'undefined') {
     return {
-      screenWidth: window.innerWidth,
-      screenHeight: window.innerHeight,
-      devicePixelRatio: window.devicePixelRatio || 1,
-      orientation: window.screen?.orientation?.type || null,
-      isMobile: width < 768,
-      isTablet: width >= 768 && width < 1024,
-      isDesktop: width >= 1024
+      screenWidth: 1024,
+      screenHeight: 768,
+      devicePixelRatio: 1,
+      orientation: null,
+      isMobile: false,
+      isTablet: false,
+      isDesktop: true
     }
   }
 
-  const [dimensions, setDimensions] = useState<ScreenDimensions>(getInitialState)
+  const width = window.innerWidth
+
+  return {
+    screenWidth: window.innerWidth,
+    screenHeight: window.innerHeight,
+    devicePixelRatio: window.devicePixelRatio || 1,
+    orientation: window.screen?.orientation?.type || null,
+    isMobile: width < mobileBreakPoint,
+    isTablet: width >= mobileBreakPoint && width < tabletBreakPoint,
+    isDesktop: width >= tabletBreakPoint
+  }
+}
+
+const useScreenDimensions = (options: UseScreenDimensionsOptions = {}) => {
+  const {
+    debounceMs = 100,
+    mobileBreakPoint = 768,
+    tabletBreakPoint = 1024,
+  } = options
+
+  const initialState = getInitialState(mobileBreakPoint, tabletBreakPoint)
+  const [dimensions, setDimensions] = useState<ScreenDimensions>(initialState)
 
   const updateDimensions = () => {
     if (typeof window === 'undefined') return
@@ -43,9 +47,9 @@ const useScreenDimensions = (options: UseScreenDimensionsOptions = {}) => {
       screenHeight: window.innerHeight,
       devicePixelRatio: window.devicePixelRatio || 1,
       orientation: window.screen?.orientation?.type || null,
-      isMobile: width < 768,
-      isTablet: width >= 768 && width < 1024,
-      isDesktop: width >= 1024
+      isMobile: width < mobileBreakPoint,
+      isTablet: width >= mobileBreakPoint && width < tabletBreakPoint,
+      isDesktop: width >= tabletBreakPoint
     })
   }
 

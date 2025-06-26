@@ -1,7 +1,7 @@
 {
-  "name": "use-render-env",
-  "version": "1.0.2",
-  "description": "Hook to indicate server side or client side render along with loading state",
+  "name": "@avent-ui/use-screen-dimensions",
+  "version": "0.0.1",
+  "description": "Provides real-time screen dimensions like height, width, orientation and more",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
@@ -16,22 +16,24 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AathiEswar/avent-ui/tree/main/src/hooks/useRenderEnv"
+    "url": "git+https://github.com/AathiEswar/avent-ui/tree/main/src/hooks/useScreenDimensions"
   },
   "keywords": [
     "avent-ui",
     "avent",
     "hook",
     "ssr",
-    "csr",
-    "loading"
+    "responsive",
+    "orientation",
+    "screen",
+    "dimensions"
   ],
   "author": "Aathi Eswar S",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/AathiEswar/avent-ui/issues"
   },
-  "homepage": "https://github.com/AathiEswar/avent-ui/blob/main/src/hooks/useRenderEnv/README.md",
+  "homepage": "https://github.com/AathiEswar/avent-ui/blob/main/src/hooks/useScreenDimensions/README.md",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"

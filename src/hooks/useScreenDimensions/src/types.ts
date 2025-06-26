@@ -9,5 +9,8 @@ export type ScreenDimensions = {
 }
 
 export type UseScreenDimensionsOptions = {
-  debounceMs?: number
+  debounceMs?: number,
+  mobileBreakPoint?: number,
+  tabletBreakPoint?: number,
+  desktopBreakPoint?: number,
 }
