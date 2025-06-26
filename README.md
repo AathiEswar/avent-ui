@@ -66,6 +66,7 @@ and follow the regular installation instruction <br/>
 
  ## List of Hooks :
  [useRenderEnv](src/hooks/useRenderEnv/README.md)
+ [useScreenDimensions](src/hooks/useScreenDimensions/README.md)
 
  ## List of Context : 
  [PageTransitionContext](src/context/Page%20Transition/README.md)
