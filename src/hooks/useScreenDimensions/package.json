@@ -1,53 +1,40 @@
 {
-  "name": "avent-ui",
-  "version": "1.0.14",
-  "description": "The best UI library for Typescript and React",
+  "name": "use-render-env",
+  "version": "1.0.2",
+  "description": "Hook to indicate server side or client side render along with loading state",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
-  "type": "module",
   "files": [
     "dist"
   ],
-  "peerDependencies": {
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0"
-  },
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
-    "build:watch": "rollup -c --watch",
     "prepare": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AathiEswar/avent-ui.git"
+    "url": "git+https://github.com/AathiEswar/avent-ui/tree/main/src/hooks/useRenderEnv"
   },
   "keywords": [
-    "ui",
-    "library",
-    "component",
-    "animate",
-    "animation",
-    "visuals",
-    "react",
-    "typescript",
+    "avent-ui",
     "avent",
-    "avent-ui"
+    "hook",
+    "ssr",
+    "csr",
+    "loading"
   ],
   "author": "Aathi Eswar S",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/AathiEswar/avent-ui/issues"
   },
-  "homepage": "https://github.com/AathiEswar/avent-ui#readme",
+  "homepage": "https://github.com/AathiEswar/avent-ui/blob/main/src/hooks/useRenderEnv/README.md",
   "dependencies": {
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "framer-motion": "^11.11.17",
-    "react": "^17.0.0 || ^18.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0",
-    "tailwind-merge": "^3.3.1"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",
@@ -55,13 +42,11 @@
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.49",
-    "rollup": "^4.25.0",
+    "rollup": "^4.27.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
-    "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3"
   }
 }
