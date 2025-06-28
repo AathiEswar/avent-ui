@@ -1,6 +1,6 @@
 {
   "name": "use-render-env",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Hook to indicate server side or client side render along with loading state",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",

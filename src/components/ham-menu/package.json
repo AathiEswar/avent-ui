@@ -1,6 +1,6 @@
 {
   "name": "@avent-ui/ham-menu",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Ham Menu with Smooth Animation",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",

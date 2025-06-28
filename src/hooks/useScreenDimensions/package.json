@@ -1,6 +1,6 @@
 {
   "name": "@avent-ui/use-screen-dimensions",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Provides real-time screen dimensions like height, width, orientation and more",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
