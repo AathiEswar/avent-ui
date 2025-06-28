@@ -1,15 +1,10 @@
 import React from 'react'
-import { ButtonHTMLAttributes, forwardRef } from 'react'
-import { cva, VariantProps } from 'class-variance-authority';
-import { cn } from "../../../../utils/cn"
+import { forwardRef } from 'react'
+import { cva } from 'class-variance-authority';
+import { cn } from "@avent-ui/utils"
+import { ButtonProps } from '../types';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: VariantProps<typeof CvaButtonVariants>['variant'],
-  size?: VariantProps<typeof CvaButtonVariants>['size'],
-  asChild?: boolean
-}
-
-const CvaButtonVariants = cva(
+export const CvaButtonVariants = cva(
   "rounded-md transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
