@@ -1,6 +1,6 @@
 {
   "name": "@avent-ui/magneto",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Container for Magnetic Effect",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AathiEswar/avent-ui/tree/main/src/components/ham-menu"
+    "url": "git+https://github.com/AathiEswar/avent-ui/tree/main/src/components/Magneto"
   },
   "keywords": [
     "magnet",
@@ -44,6 +44,7 @@
   },
   "homepage": "https://github.com/AathiEswar/avent-ui/blob/main/src/components/Magneto/README.md",
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.11",
     "gsap": "^3.12.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
