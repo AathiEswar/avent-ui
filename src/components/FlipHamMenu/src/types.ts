@@ -1,10 +1,9 @@
 import { Variants } from "framer-motion"
-import { Dispatch, SetStateAction } from "react"
+import React, { Dispatch, ReactNode, SetStateAction } from "react"
 
 export type FlipMenuBarProps = {
-  variants: Variants,
-  isActive: boolean,
-  flipHamMenuNavLinks: NavLink[]
+  as?: string,
+  className?: string
 }
 
 export type NavLink = {
@@ -14,9 +13,14 @@ export type NavLink = {
 
 export type FlipHamMenuProps = {
   flipHamMenuNavLinks: NavLink[]
+  openMenuLabel?: string,
+  closeMenuLabel?: string,
+  children: ReactNode
 }
 
-export type FlipHamButtonPropos = {
+export type FlipHamButtonProps = {
   isActive: boolean,
-  setActive: Dispatch<SetStateAction<boolean>>
+  setActive: Dispatch<SetStateAction<boolean>>,
+  openMenuLabel?: string,
+  closeMenuLabel?: string,
 }

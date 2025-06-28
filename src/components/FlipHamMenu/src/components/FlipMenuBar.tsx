@@ -1,12 +1,16 @@
-import React from "react"
+import React, { forwardRef, Ref } from "react"
 import { motion } from "framer-motion"
 import { FlipMenuBarProps } from "../types"
 import { perspective } from "../utils/anim"
+import { useFlipHamMenuContext } from "../context/useFlipHamMenuContext"
 
-const FlipMenuBar = ({ variants, isActive, flipHamMenuNavLinks }: FlipMenuBarProps) => {
+const FlipMenuBar = forwardRef<HTMLDivElement, FlipMenuBarProps>((props, ref: Ref<HTMLDivElement>) => {
+  const { as, className, ...otherProps } = props;
+  const { isActive, flipHamMenuNavLinks, variants } = useFlipHamMenuContext()
   return (
     <motion.div
-      className='em-menu-bar relative bg-[#c9fd74] w-[480px] h-[650px] flex flex-col items-center justify-center rounded-2xl text-[60px] border border-2 border-black'
+      ref={ref}
+      className='fhb-menu-bar relative bg-[#c9fd74] w-[480px] h-[650px] flex flex-col items-center justify-center rounded-2xl text-[60px] border border-2 border-black'
       variants={variants}
       animate={isActive ? "open" : "close"}
       initial={"close"}
@@ -18,13 +22,14 @@ const FlipMenuBar = ({ variants, isActive, flipHamMenuNavLinks }: FlipMenuBarPro
         WebkitBackdropFilter: " blur(11.5px)",
         borderRadius: "10px",
       }}
+      {...otherProps}
     >
       {isActive &&
         flipHamMenuNavLinks.map((link, index) => {
           return (
             <motion.div
               key={index}
-              className='em-link-div overflow-hidden h-16 md:h-20 w-full'
+              className='fhb-link-wrapper overflow-hidden h-16 md:h-20 w-full'
               style={{
                 perspective: "120px",
                 perspectiveOrigin: "top",
@@ -39,14 +44,13 @@ const FlipMenuBar = ({ variants, isActive, flipHamMenuNavLinks }: FlipMenuBarPro
                 style={{
                   transition: "all 0.5s",
                 }}
-                className='em-link-doub relative w-full flex flex-col h-16 md:h-20 top-0 hover:top-[-100%]'
+                className='fhb-link-doub-wrapper relative w-full flex flex-col h-16 md:h-20 top-0 hover:top-[-100%]'
               >
                 <div className='h-full h-16 md:h-20'>
                   <a
-                    className='em-link h-16 md:h-20 flex items-center text-white text-[40px] md:text-[60px]'
+                    className='fhb-mb-link-main h-16 md:h-20 flex items-center text-white text-[40px] md:text-[60px]'
                     href={`${link.href}`}
                     style={{
-                      fontFamily: "PPBook",
                       paddingLeft: "20%",
                       fontWeight: "800",
                     }}
@@ -56,7 +60,7 @@ const FlipMenuBar = ({ variants, isActive, flipHamMenuNavLinks }: FlipMenuBarPro
                 </div>
 
                 <div className='h-full h-16 md:h-20 mt-2'>
-                  <a className='flex items-center justify-center bg-black'
+                  <a className='fhb-mb-link-anim flex items-center justify-center bg-black'
                     href={link.href}
                   >
                     {[...Array(4)].map((_, index) => (
@@ -64,7 +68,6 @@ const FlipMenuBar = ({ variants, isActive, flipHamMenuNavLinks }: FlipMenuBarPro
                         key={index}
                         className='em-link em-link-hover text-[40px] md:text-[60px] text-green-500 h-16 md:h-20 flex items-center slider-anim animate-slider pl-[10%]'
                         style={{
-                          fontFamily: "PPBook",
                           paddingLeft: "20%",
                           fontWeight: "800",
                         }}
@@ -80,6 +83,6 @@ const FlipMenuBar = ({ variants, isActive, flipHamMenuNavLinks }: FlipMenuBarPro
       }
     </motion.div>
   )
-}
+})
 
 export default FlipMenuBar
