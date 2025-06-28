@@ -7,37 +7,73 @@ import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer'; 
 
-export default {
-  input: 'src/index.ts',
-  output: [
-    {
-      file: 'dist/index.js',
-      format: 'cjs',
-      sourcemap: true,
+export default [
+  {
+    input: 'src/index.ts',
+    output: [
+      {
+        dir: 'dist',
+        format: 'esm',
+        sourcemap: true,
+        preserveModules: true,
+        preserveModulesRoot: 'src',
+        exports: 'named',
+      },
+      {
+        file: 'dist/index.cjs',
+        format: 'cjs',
+        sourcemap: true,
+        exports: 'named',
+      },
+    ],
+    plugins: [
+      peerDepsExternal(),
+      resolve(),
+      commonjs(),
+      typescript({ 
+        useTsconfigDeclarationDir: true,
+        tsconfigOverride: {
+          compilerOptions: {
+            declaration: true,
+            declarationDir: './dist',
+          }
+        }
+      }),
+      babel({
+        exclude: ['node_modules/**' , '**/node_modules/**'],
+        babelHelpers: 'bundled',
+      }),
+    ],
+    external: ['react', 'react-dom'],
+    treeshake: {
+      moduleSideEffects: false,
+      propertyReadSideEffects: false,
+      unknownGlobalSideEffects: false,
     },
-    {
-      file: 'dist/index.esm.js',
-      format: 'esm',
-      sourcemap: true,
-    },
-  ],
-  plugins: [
-    peerDepsExternal(),
-    resolve(),
-    commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
-    babel({
-      exclude: ['node_modules/**' , '**/node_modules/**'],
-      babelHelpers: 'bundled',
-    }),
-    postcss({
-      extensions: [".css"],
-      extract: "dist/styles.css",
-      plugins: [
-        tailwindcss,
-        autoprefixer, 
-      ],
-    }),
-  ],
-  external: ['react', 'react-dom'],
-};
+  },
+  {
+    input: 'src/tailwind.css',
+    output: [
+      {
+        file: 'dist/styles.js',
+        format: 'esm',
+        sourcemap: true,
+      },
+      {
+        file: 'dist/styles.cjs',
+        format: 'cjs',
+        sourcemap: true,
+      },
+    ],
+    plugins: [
+      postcss({
+        extensions: [".css"],
+        extract: "dist/styles.css",
+        plugins: [
+          tailwindcss,
+          autoprefixer, 
+        ],
+      }),
+    ],
+  }
+];

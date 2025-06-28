@@ -1,6 +1,3 @@
-import './styles/tailwind.css';
-import './components/Magneto/src/tailwind.css';
-import './components/ham-menu/src/styles/tailwind.css';
 export { default as ButtonTest } from './Button';
 export { default as Magneto } from './components/Magneto/src/Magneto';
 export { default as HamMenu } from './components/ham-menu/src/hammenu';
@@ -12,6 +9,7 @@ export { default as HamMenuContent } from './components/ham-menu/src/hammenu-con
 export { default as HamMenuSubLink } from './components/ham-menu/src/hammenu-sublink';
 export { default as HamMenuSubContent } from './components/ham-menu/src/hammenu-subcontent';
 export { default as HamMenuCurve } from './components/ham-menu/src/hammenu-curve';
+export { Button } from "./components/Button/src/index";
 export { default as useRenderEnv } from './hooks/useRenderEnv/src/useRenderEnv';
 export { useScreenDimensions } from "./hooks/useScreenDimensions/src/index";
 export { PageTransitionContext } from './context/Page Transition/src/index';
@@ -21,4 +19,4 @@ export { SimpleScreen } from './context/Page Transition/src/index';
 export { LeftToRightScreen } from './context/Page Transition/src/index';
 export { StackOverLap } from './context/Page Transition/src/index';
 export { StaggerBlock } from './context/Page Transition/src/index';
-export { Button } from "./components/Button/src/index";
+export { cn } from './utils';

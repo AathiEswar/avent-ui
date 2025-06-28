@@ -8,25 +8,42 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      file: 'dist/index.js',
-      format: 'cjs',
-      sourcemap: true,
-    },
-    {
-      file: 'dist/index.esm.js',
+      dir: 'dist',
       format: 'esm',
       sourcemap: true,
+      preserveModules: true,
+      preserveModulesRoot: 'src',
+      exports: 'named',
+    },
+    {
+      file: 'dist/index.cjs',
+      format: 'cjs',
+      sourcemap: true,
+      exports: 'named',
     },
   ],
   plugins: [
     peerDepsExternal(),
     resolve(),
     commonjs(),
-    typescript({ useTsconfigDeclarationDir: true }),
+    typescript({ 
+      useTsconfigDeclarationDir: true,
+      tsconfigOverride: {
+        compilerOptions: {
+          declaration: true,
+          declarationDir: './dist',
+        }
+      }
+    }),
     babel({
       exclude: ['node_modules/**' , '**/node_modules/**'],
       babelHelpers: 'bundled',
     }),
   ],
   external: ['react', 'react-dom'],
+  treeshake: {
+    moduleSideEffects: false,
+    propertyReadSideEffects: false,
+    unknownGlobalSideEffects: false,
+  },
 };

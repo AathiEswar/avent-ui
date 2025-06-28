@@ -1,8 +1,4 @@
-import './styles/tailwind.css'
-
-import './components/Magneto/src/tailwind.css'
-import './components/ham-menu/src/styles/tailwind.css'
-
+// Pure exports for tree shaking - no side effects
 export { default as ButtonTest } from './Button';
 export { default as Magneto } from './components/Magneto/src/Magneto'
 export { default as HamMenu } from './components/ham-menu/src/hammenu'
