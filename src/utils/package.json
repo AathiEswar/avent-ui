@@ -1,8 +1,8 @@
 {
-  "name": "@avent-ui/button",
-  "version": "0.0.3",
-  "description": "Custom Button with Variants, Customization and Accessible for Screen Readers",
-  "main": "dist/index.ts",
+  "name": "@avent-ui/utils",
+  "version": "0.0.1",
+  "description": "Useful Utilities and Helper Functions for productive development",
+  "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -16,38 +16,38 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AathiEswar/avent-ui/tree/main/src/components/Button"
+    "url": "git+https://github.com/AathiEswar/avent-ui/tree/main/src/hooks/utils"
   },
   "keywords": [
-    "button"
+    "avent-ui",
+    "avent",
+    "utils",
+    "Utilities",
+    "cn"
   ],
   "author": "Aathi Eswar S",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/AathiEswar/avent-ui/issues"
   },
-  "homepage": "https://github.com/AathiEswar/avent-ui/blob/main/src/components/Button/README.md",
+  "homepage": "https://github.com/AathiEswar/avent-ui/blob/main/src/hooks/utils/README.md",
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^3.3.1"
+  },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.1",
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.49",
-    "postcss-cli": "^11.0.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
     "rollup": "^4.27.2",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-typescript2": "^0.36.0",
-    "tailwindcss": "^3.4.15",
     "typescript": "^5.6.3"
-  },
-  "dependencies": {
-    "@avent-ui/utils": "^0.0.1",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "tailwind-merge": "^3.3.1"
   }
 }
