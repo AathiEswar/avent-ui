@@ -1,8 +1,8 @@
 import React, { forwardRef, Ref } from 'react'
-import { motion } from "motion/react"
 import { useFlipHamMenuContext } from '../context/useFlipHamMenuContext'
 import { FlipHamButtonProps } from '../types'
 import { cn } from '@avent-ui/utils'
+import { MotionDiv } from '../motionTypes'
 
 const FlipHamButton = forwardRef((props: FlipHamButtonProps, ref: Ref<HTMLDivElement>) => {
   const { isActive, handleActiveState } = useFlipHamMenuContext()
@@ -18,7 +18,7 @@ const FlipHamButton = forwardRef((props: FlipHamButtonProps, ref: Ref<HTMLDivEle
       className={cn('fhb-wrapper shadow-lg h-10 w-[100px] rounded-2xl cursor-pointer overflow-hidden absolute top-0 right-0 em-button', className)}
       {...otherProps}
     >
-      <motion.div className='fhb-motion-wrapper relative w-full h-full'
+      <MotionDiv className='fhb-motion-wrapper relative w-full h-full'
         animate={{ top: isActive ? "-100%" : "0" }}
         transition={{ duration: 0.75, ease: [0.76, 0, 0.24, 1] }}
       >
@@ -29,7 +29,7 @@ const FlipHamButton = forwardRef((props: FlipHamButtonProps, ref: Ref<HTMLDivEle
             )
           })
         }
-      </motion.div>
+      </MotionDiv>
     </div>
   )
 })

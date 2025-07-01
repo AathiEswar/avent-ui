@@ -1,7 +1,7 @@
 {
   "name": "@avent-ui/flip-ham-menu",
   "version": "0.0.1",
-  "description": "Cool Floating Flip Ham Menu with Customization of theme and Hover Animation",
+  "description": "A sleek, animated hamburger menu system built with motion",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",

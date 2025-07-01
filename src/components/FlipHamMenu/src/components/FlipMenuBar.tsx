@@ -1,14 +1,14 @@
-import React, { forwardRef, ReactNode, Ref } from "react"
-import { motion } from "motion/react"
+import React, { forwardRef, Ref } from "react"
 import { FlipHamBarLinksProps, FlipMenuBarProps } from "../types"
 import { useFlipHamMenuContext } from "../context/useFlipHamMenuContext"
 import { cn } from "@avent-ui/utils"
+import { MotionDiv } from "../motionTypes"
 
 const FlipMenuBar = forwardRef<HTMLDivElement, FlipMenuBarProps>((props, ref: Ref<HTMLDivElement>) => {
   const { className, style, children, ...otherProps } = props;
   const { isActive, variants } = useFlipHamMenuContext()
   return (
-    <motion.div
+    <MotionDiv
       ref={ref}
       className={cn('fhb-menu-bar relative bg-[#c9fd74] flex flex-col items-center justify-center rounded-2xl text-[60px]', className)}
       variants={variants}
@@ -18,7 +18,7 @@ const FlipMenuBar = forwardRef<HTMLDivElement, FlipMenuBarProps>((props, ref: Re
       style={{
         backdropFilter: "blur(11.5px)",
         WebkitBackdropFilter: " blur(11.5px)",
-        borderColor : "#000",
+        borderColor: "#000",
         ...style
       }}
       {...otherProps}
@@ -33,7 +33,7 @@ const FlipMenuBar = forwardRef<HTMLDivElement, FlipMenuBarProps>((props, ref: Re
           )
         })
       }
-    </motion.div>
+    </MotionDiv>
   )
 })
 

@@ -6,12 +6,13 @@ import { useFlipHamMenuContext } from '../../context/useFlipHamMenuContext'
 import { cn } from '@avent-ui/utils'
 import FlipHamBarMainLink from './FlipHamBarMainLink'
 import FlipHamBarAnimLink from './FlipHamBarAnimLink'
+import { MotionDiv } from '../../motionTypes'
 
 const FlipHamBarLinks = (props: FlipHamBarLinksProps) => {
   const { index, label, href, className, style, hoverClassName, hoverStyle, ...otherProps } = props
   const { enableNavLinkHoverAnim } = useFlipHamMenuContext()
   return (
-    <motion.div
+    <MotionDiv
       key={index}
       className={cn('fhb-link-wrapper overflow-hidden h-16 md:h-20 text-[40px] md:text-[60px] w-full', className)}
       style={{
@@ -26,7 +27,7 @@ const FlipHamBarLinks = (props: FlipHamBarLinksProps) => {
       exit="exit"
       {...otherProps}
     >
-      <motion.div
+      <MotionDiv
         style={{
           transition: "all 0.5s",
         }}
@@ -37,8 +38,8 @@ const FlipHamBarLinks = (props: FlipHamBarLinksProps) => {
         {enableNavLinkHoverAnim &&
           <FlipHamBarAnimLink href={href} label={label} className={hoverClassName} style={hoverStyle} />
         }
-      </motion.div>
-    </motion.div>
+      </MotionDiv>
+    </MotionDiv>
   )
 }
 
