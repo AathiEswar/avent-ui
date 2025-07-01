@@ -5,7 +5,7 @@ import { FlipHamMenuProvider } from '../context/useFlipHamMenuContext';
 import { cn } from '@avent-ui/utils';
 
 const FlipHamMenu = forwardRef<HTMLDivElement, FlipHamMenuProps>((props, ref: Ref<HTMLDivElement>) => {
-  const { openMenuLabel, closeMenuLabel, children, enableNavLinkHoverAnim, className, ...otherProps } = props;
+  const { children, enableNavLinkHoverAnim, className, ...otherProps } = props;
   const { screenWidth } = useScreenDimensions()
 
   const variants = useMemo(() => ({
