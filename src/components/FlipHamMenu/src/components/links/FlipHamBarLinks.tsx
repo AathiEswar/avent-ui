@@ -1,5 +1,4 @@
 import React from 'react'
-import { motion } from 'motion/react'
 import { perspective } from '../../utils/anim'
 import { FlipHamBarLinksProps } from '../../types'
 import { useFlipHamMenuContext } from '../../context/useFlipHamMenuContext'

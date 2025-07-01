@@ -1,5 +1,4 @@
 import React from 'react'
-import { useFlipHamMenuContext } from '../../context/useFlipHamMenuContext'
 import { FlipHamOpenButtonProps } from '../../types';
 import { cn } from '@avent-ui/utils';
 
