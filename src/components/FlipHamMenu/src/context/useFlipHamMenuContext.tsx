@@ -1,44 +1,24 @@
-import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { Variants } from 'framer-motion';
-import { NavLink } from '../types';
-
-export interface FlipHamMenuContextType {
-  isActive: boolean;
-  setActive: (active: boolean) => void;
-  variants: Variants;
-  flipHamMenuNavLinks: NavLink[];
-  openMenuLabel: string;
-  closeMenuLabel: string;
-}
+import React, { createContext, useContext, useState } from 'react';
+import { FlipHamMenuContextType, FlipHamMenuProviderProps } from '../types';
 
 const FlipHamMenuContext = createContext<FlipHamMenuContextType | undefined>(undefined);
-
-export interface FlipHamMenuProviderProps {
-  children: ReactNode;
-  variants: Variants;
-  flipHamMenuNavLinks: NavLink[];
-  openMenuLabel?: string;
-  closeMenuLabel?: string;
-  initialActive?: boolean;
-}
 
 export const FlipHamMenuProvider: React.FC<FlipHamMenuProviderProps> = ({
   children,
   variants,
-  flipHamMenuNavLinks,
-  openMenuLabel = "Open Menu",
-  closeMenuLabel = "Close Menu",
-  initialActive = false
+  initialActive = false,
+  enableNavLinkHoverAnim = true,
 }) => {
   const [isActive, setActive] = useState(initialActive);
-  
+  function handleActiveState() {
+    setActive(!isActive)
+  }
   const value: FlipHamMenuContextType = {
     isActive,
     setActive,
     variants,
-    flipHamMenuNavLinks,
-    openMenuLabel,
-    closeMenuLabel
+    handleActiveState,
+    enableNavLinkHoverAnim,
   };
 
   return (
