@@ -11,7 +11,10 @@ npm install @avent-ui/ham-menu
 ```
 ### 2 . Tailwind CSS setup 
 
-AventUI is built on top of Tailwind CSS, so you need to install Tailwind CSS first. You can follow the official [installation guide](https://tailwindcss.com/docs/installation) to install Tailwind CSS. Then you need to add the following code to your tailwind.config.js file:
+AventUI is built on top of Tailwind CSS, so you need to install Tailwind CSS first. You can follow the official [installation guide](https://tailwindcss.com/docs/installation) to install Tailwind CSS. 
+
+Then you need to add the following code to your `tailwind.config.js` file:
+
 ```jsx
 /** @type {import('tailwindcss').Config} */
 module.exports = {

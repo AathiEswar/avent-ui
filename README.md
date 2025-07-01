@@ -64,6 +64,7 @@ and follow the regular installation instruction <br/>
 
 [Magneto ](src/components/Magneto/README.md) <br/>
 [Ham Menu](src/components/ham-menu/README.md) <br/>
+[Flip Ham Menu](src/components/FlipHamMenu/README.md) <br/>
 [Button](src/components/Button/README.md) <br/>
 
 ## List of Hooks :
