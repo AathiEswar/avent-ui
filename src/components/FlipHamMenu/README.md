@@ -2,13 +2,11 @@
 
 **FlipHamMenu** is a sleek, animated hamburger menu system. Built with motion and customization in mind, it offers smooth open/close transitions, staggered nav animations, and support for custom buttons and layouts.
 
----
-
 ### Installation
 
 #### 1. Install the Component via npm
 
-```bash
+```jsx
 npm install @avent-ui/flip-ham-menu
 ```
 
@@ -18,7 +16,7 @@ FlipHamMenu uses Tailwind CSS classes internally, so make sure Tailwind is confi
 
 Then add the following to your `tailwind.config.js`:
 
-```js
+```jsx
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -32,8 +30,6 @@ module.exports = {
   plugins: [],
 };
 ```
-
----
 
 ### 3. Import Components
 
@@ -66,8 +62,6 @@ import {
 </FlipHamMenu>
 ```
 
----
-
 ### 🧩 Components
 
 | Component            | Type      | Description                                                             |
@@ -78,8 +72,6 @@ import {
 | `FlipHamButton`      | Wrapper   | Holds open/close buttons. Controls menu toggle behavior.                |
 | `FlipHamOpenButton`  | Trigger   | Opens the menu. Can be styled or customized freely.                     |
 | `FlipHamCloseButton` | Trigger   | Closes the menu. Accepts label and styling options.                     |
-
----
 
 ### ⚙️ Props
 
@@ -110,7 +102,6 @@ import {
 | Prop             | Type     | Description                          | Default  |
 | ---------------- | -------- | ------------------------------------ | -------- |
 | `openMenuLabel` | `string` | Optional label for the open button. | `"CLOSE"` |
----
 
 ### 🧠 Behavior & Relationships
 
@@ -125,15 +116,11 @@ import {
 * `FlipMenuBar` assigns an index to each `FlipHamBarLinks` to trigger staggered entrance animations.
 * Hover effects (if enabled) apply smooth hover transforms and transitions.
 
----
-
 ### 🎨 Customization
 
 * All components support `className` and `style` props.
 * You can override animations, positions, and even replace buttons with your own components.
 * Add or remove menu items by modifying the children of `FlipMenuBar`.
-
----
 
 ### 🧪 Example with Custom Buttons
 
@@ -150,4 +137,3 @@ import {
   </FlipHamButton>
 </FlipHamMenu>
 ```
-
